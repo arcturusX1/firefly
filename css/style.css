@@ -598,15 +598,6 @@
   color: var(--color-yellow);
 }
 
-.process__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 0 28px;
-  border-radius: 20px;
-  background: var(--color-white);
-}
-
 .step-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -628,6 +619,18 @@
   transform: translateY(-6px);
   border-color: var(--color-yellow);
   background: rgba(242, 223, 58, .08);
+}
+
+.step-card__icon {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.step-card__icon img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .step-card__index {
