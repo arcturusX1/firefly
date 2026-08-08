@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   spawnFireflies(document.getElementById('contact-fireflies'), 20);
   initRevealOnScroll();
   initNavToggle();
+  initHeaderScroll();
 });
 
 function initNavToggle() {
@@ -31,6 +32,35 @@ function initNavToggle() {
   window.addEventListener('resize', () => {
     if (window.innerWidth > 860) closeNav();
   });
+}
+
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  const hero = document.getElementById('home');
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  if (!header || !hero) return;
+
+  const setScrolled = scrolled => {
+    header.classList.toggle('is-scrolled', scrolled);
+    if (scrolled && nav && toggle) {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    const check = () => setScrolled(window.scrollY > hero.offsetHeight - 96);
+    window.addEventListener('scroll', check);
+    check();
+    return;
+  }
+
+  const observer = new IntersectionObserver(([entry]) => {
+    setScrolled(!entry.isIntersecting);
+  }, { rootMargin: '-96px 0px 0px 0px' });
+
+  observer.observe(hero);
 }
 
 function initRevealOnScroll() {
