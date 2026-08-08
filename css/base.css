@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color .35s ease, background-color .35s ease, border-color .35s ease,
+    opacity .35s ease, transform .35s ease, box-shadow .35s ease;
+}
+
+a:hover {
+  color: var(--color-yellow-dark);
+}
+
+section {
+  scroll-margin-top: var(--header-height);
+}
+
+/* Firefly particle field */
+.firefly-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-yellow);
+  will-change: transform, opacity;
+}
+
+/* Scroll-reveal (progressive enhancement — see js/main.js) */
+[data-reveal] {
+  transition: opacity .7s var(--ease-smooth), transform .7s var(--ease-smooth);
+}
+
+[data-reveal].is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: .28; transform: scale(1); }
+  50% { opacity: .75; transform: scale(1.08); }
+}
+
+@keyframes fly1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(90px, -62px, 0); }
+  50% { transform: translate3d(30px, -130px, 0); }
+  75% { transform: translate3d(-72px, -52px, 0); }
+}
+
+@keyframes fly2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  30% { transform: translate3d(-104px, -80px, 0); }
+  60% { transform: translate3d(-34px, 62px, 0); }
+  80% { transform: translate3d(62px, 28px, 0); }
+}
+
+@keyframes fly3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  20% { transform: translate3d(54px, 72px, 0); }
+  55% { transform: translate3d(132px, -34px, 0); }
+  85% { transform: translate3d(20px, -96px, 0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: .08; }
+  35% { opacity: 1; }
+  60% { opacity: .28; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .firefly,
+  [style*="animation"] {
+    animation: none !important;
+  }
+}
