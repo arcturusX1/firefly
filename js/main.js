@@ -2,7 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
   spawnFireflies(document.getElementById('hero-fireflies'), 74);
   spawnFireflies(document.getElementById('contact-fireflies'), 20);
   initRevealOnScroll();
+  initNavToggle();
 });
+
+function initNavToggle() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (!toggle || !nav) return;
+
+  const closeNav = () => {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  nav.addEventListener('click', e => {
+    if (e.target.closest('a')) closeNav();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) closeNav();
+  });
+}
 
 function initRevealOnScroll() {
   const els = Array.from(document.querySelectorAll('[data-reveal]'));

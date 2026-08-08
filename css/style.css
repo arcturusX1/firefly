@@ -119,6 +119,58 @@
   color: var(--color-ink);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  background: rgba(10, 10, 10, .06);
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(4) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -869,6 +921,48 @@
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-ink-10);
+    box-shadow: 0 16px 30px rgba(10, 10, 10, .08);
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height .35s ease, opacity .3s ease, visibility .35s;
+  }
+
+  .site-nav.is-open {
+    max-height: 420px;
+    overflow: visible;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 16px var(--section-x);
+    border-bottom: 1px solid var(--color-ink-10);
+  }
+
+  .site-nav .btn {
+    margin: 16px var(--section-x);
+    justify-content: center;
+  }
+}
+
 @media (max-width: 1080px) {
   .hero {
     grid-template-columns: 1fr;
@@ -905,11 +999,6 @@
 @media (max-width: 720px) {
   :root {
     --section-x: 24px;
-  }
-
-  .site-nav {
-    gap: 18px;
-    flex-wrap: wrap;
   }
 
   .hero__title {
