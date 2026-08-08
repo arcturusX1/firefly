@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBFAF6; font-family: Inter, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #0a0a0a; text-decoration: none; transition: color .35s ease, background-color .35s ease, border-color .35s ease, opacity .35s ease, transform .35s ease, box-shadow .35s ease; }
+  a:hover { color: #8A7A00; }
+  section { scroll-margin-top: 96px; }
+  @keyframes glowPulse { 0%,100% { opacity:.28; transform:scale(1); } 50% { opacity:.75; transform:scale(1.08); } }
+  @keyframes fly1 { 0%,100% { transform:translate3d(0,0,0); } 25% { transform:translate3d(90px,-62px,0); } 50% { transform:translate3d(30px,-130px,0); } 75% { transform:translate3d(-72px,-52px,0); } }
+  @keyframes fly2 { 0%,100% { transform:translate3d(0,0,0); } 30% { transform:translate3d(-104px,-80px,0); } 60% { transform:translate3d(-34px,62px,0); } 80% { transform:translate3d(62px,28px,0); } }
+  @keyframes fly3 { 0%,100% { transform:translate3d(0,0,0); } 20% { transform:translate3d(54px,72px,0); } 55% { transform:translate3d(132px,-34px,0); } 85% { transform:translate3d(20px,-96px,0); } }
+  @keyframes blink { 0%,100% { opacity:.08; } 35% { opacity:1; } 60% { opacity:.28; } }
+  @keyframes floatSoft { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</helmet>
+<div style="background:#FBFAF6;color:#0a0a0a;min-height:100vh;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,10,10,.1)">
+    <a href="#home" style="display:flex;align-items:center"><img src="assets/logo-light.png" alt="Firefly" style="height:38px;width:auto;display:block"></a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#about" style="color:rgba(10,10,10,.7);font-size:15px;font-weight:500" style-hover="color:#0a0a0a">About</a>
+      <a href="#services" style="color:rgba(10,10,10,.7);font-size:15px;font-weight:500" style-hover="color:#0a0a0a">Services</a>
+      <a href="#process" style="color:rgba(10,10,10,.7);font-size:15px;font-weight:500" style-hover="color:#0a0a0a">Process</a>
+      <a href="#packages" style="color:rgba(10,10,10,.7);font-size:15px;font-weight:500" style-hover="color:#0a0a0a">Packages</a>
+      <a href="#contact" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#0a0a0a;color:#F2DF3A;font-size:15px;font-weight:700" style-hover="background:#F2DF3A;color:#0a0a0a;transform:translateY(-2px);box-shadow:0 10px 24px rgba(242,223,58,.45)">Let’s talk</a>
+    </nav>
+  </header>
+
+  <section id="home" style="position:relative;padding:104px 48px 92px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;max-width:1400px;margin:0 auto">
+    <div style="position:absolute;top:-120px;left:-140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(242,223,58,.55),transparent 66%);pointer-events:none;animation:glowPulse 7s ease-in-out infinite"></div>
+    <div style="position:absolute;bottom:-160px;right:6%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(242,223,58,.35),transparent 68%);pointer-events:none;animation:glowPulse 9s ease-in-out infinite 1.4s"></div>
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+      <span style="position:absolute;left:59.7%;top:29.9%;width:5.7px;height:5.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.58);animation:fly1 18.9s ease-in-out infinite 4.0s, blink 4.7s ease-in-out infinite 3.5s"></span>
+      <span style="position:absolute;left:7.5%;top:99.7%;width:4.0px;height:4.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.36);animation:fly2 11.7s ease-in-out infinite 6.0s, blink 3.0s ease-in-out infinite 1.5s"></span>
+      <span style="position:absolute;left:7.2%;top:67.4%;width:7.6px;height:7.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.47);animation:fly3 17.3s ease-in-out infinite 4.4s, blink 3.0s ease-in-out infinite 2.5s"></span>
+      <span style="position:absolute;left:20.4%;top:89.2%;width:3.3px;height:3.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.53);animation:fly1 17.2s ease-in-out infinite 0.9s, blink 2.9s ease-in-out infinite 2.9s"></span>
+      <span style="position:absolute;left:86.3%;top:81.8%;width:7.2px;height:7.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.51);animation:fly2 16.7s ease-in-out infinite 0.2s, blink 4.0s ease-in-out infinite 0.6s"></span>
+      <span style="position:absolute;left:38.3%;top:29.9%;width:7.0px;height:7.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.47);animation:fly3 12.8s ease-in-out infinite 5.2s, blink 4.8s ease-in-out infinite 0.8s"></span>
+      <span style="position:absolute;left:57.4%;top:41.5%;width:4.5px;height:4.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.50);animation:fly1 17.6s ease-in-out infinite 3.6s, blink 4.1s ease-in-out infinite 2.9s"></span>
+      <span style="position:absolute;left:39.9%;top:57.4%;width:4.2px;height:4.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.42);animation:fly2 10.8s ease-in-out infinite 3.5s, blink 4.7s ease-in-out infinite 1.8s"></span>
+      <span style="position:absolute;left:45.2%;top:8.0%;width:6.9px;height:6.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.50);animation:fly3 11.8s ease-in-out infinite 0.7s, blink 5.9s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:93.2%;top:24.9%;width:5.4px;height:5.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.40);animation:fly1 13.5s ease-in-out infinite 3.8s, blink 5.2s ease-in-out infinite 0.9s"></span>
+      <span style="position:absolute;left:61.7%;top:0.0%;width:4.4px;height:4.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.48);animation:fly2 17.0s ease-in-out infinite 4.6s, blink 4.4s ease-in-out infinite 1.5s"></span>
+      <span style="position:absolute;left:25.4%;top:29.2%;width:7.2px;height:7.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.52);animation:fly3 12.5s ease-in-out infinite 3.6s, blink 3.0s ease-in-out infinite 3.5s"></span>
+      <span style="position:absolute;left:44.8%;top:17.4%;width:7.1px;height:7.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.44);animation:fly1 12.6s ease-in-out infinite 1.3s, blink 4.4s ease-in-out infinite 3.1s"></span>
+      <span style="position:absolute;left:0.1%;top:42.1%;width:3.5px;height:3.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.57);animation:fly2 18.9s ease-in-out infinite 1.7s, blink 4.9s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:72.1%;top:97.4%;width:4.3px;height:4.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.48);animation:fly3 12.0s ease-in-out infinite 3.0s, blink 4.2s ease-in-out infinite 3.1s"></span>
+      <span style="position:absolute;left:94.4%;top:77.9%;width:5.5px;height:5.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.47);animation:fly1 18.2s ease-in-out infinite 2.3s, blink 4.9s ease-in-out infinite 3.6s"></span>
+      <span style="position:absolute;left:33.8%;top:74.4%;width:7.5px;height:7.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.36);animation:fly2 17.9s ease-in-out infinite 1.1s, blink 3.7s ease-in-out infinite 1.4s"></span>
+      <span style="position:absolute;left:13.6%;top:66.2%;width:7.1px;height:7.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.50);animation:fly3 12.1s ease-in-out infinite 3.3s, blink 3.8s ease-in-out infinite 0.7s"></span>
+      <span style="position:absolute;left:64.3%;top:91.7%;width:7.6px;height:7.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.43);animation:fly1 12.2s ease-in-out infinite 4.1s, blink 3.2s ease-in-out infinite 3.3s"></span>
+      <span style="position:absolute;left:31.2%;top:69.3%;width:3.6px;height:3.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.47);animation:fly2 17.6s ease-in-out infinite 2.1s, blink 3.8s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:55.6%;top:93.2%;width:5.2px;height:5.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.39);animation:fly3 18.8s ease-in-out infinite 0.4s, blink 4.9s ease-in-out infinite 2.6s"></span>
+      <span style="position:absolute;left:60.8%;top:76.7%;width:5.9px;height:5.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.56);animation:fly1 10.5s ease-in-out infinite 5.4s, blink 4.5s ease-in-out infinite 1.7s"></span>
+      <span style="position:absolute;left:75.6%;top:15.7%;width:7.5px;height:7.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.54);animation:fly2 12.9s ease-in-out infinite 0.6s, blink 3.6s ease-in-out infinite 0.3s"></span>
+      <span style="position:absolute;left:76.6%;top:57.8%;width:3.1px;height:3.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.41);animation:fly3 13.7s ease-in-out infinite 4.9s, blink 4.4s ease-in-out infinite 0.7s"></span>
+      <span style="position:absolute;left:16.0%;top:59.9%;width:5.9px;height:5.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.38);animation:fly1 12.8s ease-in-out infinite 3.9s, blink 3.2s ease-in-out infinite 3.4s"></span>
+      <span style="position:absolute;left:99.0%;top:14.0%;width:4.3px;height:4.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.36);animation:fly2 10.8s ease-in-out infinite 4.1s, blink 4.4s ease-in-out infinite 2.7s"></span>
+      <span style="position:absolute;left:6.1%;top:0.0%;width:3.6px;height:3.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.39);animation:fly3 14.4s ease-in-out infinite 0.4s, blink 6.4s ease-in-out infinite 1.3s"></span>
+      <span style="position:absolute;left:21.3%;top:32.3%;width:5.3px;height:5.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.39);animation:fly1 14.6s ease-in-out infinite 5.9s, blink 5.4s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:28.3%;top:79.3%;width:6.8px;height:6.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.36);animation:fly2 14.5s ease-in-out infinite 0.5s, blink 5.4s ease-in-out infinite 3.0s"></span>
+      <span style="position:absolute;left:11.3%;top:31.9%;width:4.1px;height:4.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.49);animation:fly3 12.3s ease-in-out infinite 3.8s, blink 4.8s ease-in-out infinite 3.4s"></span>
+      <span style="position:absolute;left:86.0%;top:50.8%;width:3.7px;height:3.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.60);animation:fly1 15.8s ease-in-out infinite 3.1s, blink 4.7s ease-in-out infinite 3.1s"></span>
+      <span style="position:absolute;left:62.0%;top:68.9%;width:7.4px;height:7.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.59);animation:fly2 12.9s ease-in-out infinite 5.5s, blink 4.6s ease-in-out infinite 3.5s"></span>
+      <span style="position:absolute;left:93.5%;top:86.6%;width:5.7px;height:5.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.36);animation:fly3 10.3s ease-in-out infinite 4.2s, blink 3.1s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:95.5%;top:1.2%;width:7.2px;height:7.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.48);animation:fly1 17.6s ease-in-out infinite 0.3s, blink 4.4s ease-in-out infinite 0.4s"></span>
+      <span style="position:absolute;left:5.1%;top:34.2%;width:4.1px;height:4.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.44);animation:fly2 13.8s ease-in-out infinite 4.7s, blink 5.6s ease-in-out infinite 3.7s"></span>
+      <span style="position:absolute;left:82.1%;top:54.2%;width:5.6px;height:5.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.42);animation:fly3 11.1s ease-in-out infinite 3.4s, blink 4.7s ease-in-out infinite 0.4s"></span>
+      <span style="position:absolute;left:1.0%;top:16.9%;width:4.6px;height:4.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.49);animation:fly1 12.7s ease-in-out infinite 3.2s, blink 6.3s ease-in-out infinite 2.1s"></span>
+      <span style="position:absolute;left:90.8%;top:93.2%;width:7.7px;height:7.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.47);animation:fly2 15.0s ease-in-out infinite 4.5s, blink 3.1s ease-in-out infinite 0.6s"></span>
+      <span style="position:absolute;left:93.1%;top:65.0%;width:3.1px;height:3.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.55);animation:fly3 11.7s ease-in-out infinite 4.5s, blink 5.6s ease-in-out infinite 2.9s"></span>
+      <span style="position:absolute;left:40.9%;top:4.1%;width:4.1px;height:4.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.41);animation:fly1 16.0s ease-in-out infinite 4.1s, blink 4.4s ease-in-out infinite 2.5s"></span>
+      <span style="position:absolute;left:29.2%;top:1.3%;width:7.4px;height:7.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.54);animation:fly2 18.4s ease-in-out infinite 0.6s, blink 4.2s ease-in-out infinite 1.3s"></span>
+      <span style="position:absolute;left:88.2%;top:11.4%;width:4.0px;height:4.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.60);animation:fly3 11.0s ease-in-out infinite 4.1s, blink 3.9s ease-in-out infinite 2.0s"></span>
+      <span style="position:absolute;left:24.7%;top:68.2%;width:7.9px;height:7.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.56);animation:fly1 18.7s ease-in-out infinite 3.9s, blink 5.3s ease-in-out infinite 2.3s"></span>
+      <span style="position:absolute;left:64.1%;top:54.7%;width:7.0px;height:7.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.57);animation:fly2 14.6s ease-in-out infinite 0.6s, blink 3.8s ease-in-out infinite 4.0s"></span>
+      <span style="position:absolute;left:99.7%;top:65.7%;width:3.7px;height:3.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.40);animation:fly3 16.0s ease-in-out infinite 1.6s, blink 6.4s ease-in-out infinite 2.5s"></span>
+      <span style="position:absolute;left:95.0%;top:51.7%;width:3.9px;height:3.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.52);animation:fly1 16.8s ease-in-out infinite 0.2s, blink 3.0s ease-in-out infinite 1.4s"></span>
+      <span style="position:absolute;left:81.0%;top:12.6%;width:5.9px;height:5.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.44);animation:fly2 15.5s ease-in-out infinite 3.3s, blink 3.4s ease-in-out infinite 2.0s"></span>
+      <span style="position:absolute;left:15.4%;top:66.4%;width:4.5px;height:4.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.56);animation:fly3 11.3s ease-in-out infinite 0.6s, blink 5.8s ease-in-out infinite 2.0s"></span>
+      <span style="position:absolute;left:87.6%;top:94.3%;width:4.0px;height:4.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.50);animation:fly1 18.6s ease-in-out infinite 1.1s, blink 4.5s ease-in-out infinite 1.2s"></span>
+      <span style="position:absolute;left:9.8%;top:8.7%;width:5.2px;height:5.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.36);animation:fly2 11.5s ease-in-out infinite 5.7s, blink 5.2s ease-in-out infinite 2.7s"></span>
+      <span style="position:absolute;left:60.1%;top:45.9%;width:4.0px;height:4.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.56);animation:fly3 11.2s ease-in-out infinite 3.8s, blink 3.0s ease-in-out infinite 2.4s"></span>
+      <span style="position:absolute;left:65.9%;top:56.3%;width:3.7px;height:3.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.36);animation:fly1 12.0s ease-in-out infinite 0.6s, blink 3.2s ease-in-out infinite 0.0s"></span>
+      <span style="position:absolute;left:56.7%;top:11.0%;width:5.3px;height:5.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.38);animation:fly2 10.3s ease-in-out infinite 5.4s, blink 3.4s ease-in-out infinite 1.3s"></span>
+      <span style="position:absolute;left:99.6%;top:75.5%;width:3.0px;height:3.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.58);animation:fly3 14.0s ease-in-out infinite 5.0s, blink 3.5s ease-in-out infinite 0.8s"></span>
+      <span style="position:absolute;left:96.9%;top:48.0%;width:6.8px;height:6.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.44);animation:fly1 15.5s ease-in-out infinite 5.0s, blink 5.2s ease-in-out infinite 2.7s"></span>
+      <span style="position:absolute;left:79.2%;top:14.7%;width:4.8px;height:4.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.43);animation:fly2 18.8s ease-in-out infinite 5.6s, blink 3.8s ease-in-out infinite 0.7s"></span>
+      <span style="position:absolute;left:56.6%;top:69.8%;width:4.9px;height:4.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.52);animation:fly3 16.0s ease-in-out infinite 5.4s, blink 5.0s ease-in-out infinite 3.5s"></span>
+      <span style="position:absolute;left:47.1%;top:13.4%;width:7.5px;height:7.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.54);animation:fly1 13.6s ease-in-out infinite 1.9s, blink 3.3s ease-in-out infinite 1.1s"></span>
+      <span style="position:absolute;left:90.3%;top:59.3%;width:6.2px;height:6.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.45);animation:fly2 17.0s ease-in-out infinite 1.6s, blink 6.0s ease-in-out infinite 2.2s"></span>
+      <span style="position:absolute;left:0.1%;top:24.7%;width:5.5px;height:5.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.36);animation:fly3 13.3s ease-in-out infinite 4.1s, blink 6.2s ease-in-out infinite 1.2s"></span>
+      <span style="position:absolute;left:39.6%;top:1.0%;width:4.4px;height:4.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.39);animation:fly1 10.5s ease-in-out infinite 0.9s, blink 5.5s ease-in-out infinite 0.6s"></span>
+      <span style="position:absolute;left:60.0%;top:16.5%;width:6.1px;height:6.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.50);animation:fly2 18.8s ease-in-out infinite 5.5s, blink 5.4s ease-in-out infinite 1.5s"></span>
+      <span style="position:absolute;left:69.4%;top:66.1%;width:6.4px;height:6.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.45);animation:fly3 16.5s ease-in-out infinite 0.2s, blink 3.0s ease-in-out infinite 0.1s"></span>
+      <span style="position:absolute;left:26.0%;top:94.9%;width:4.4px;height:4.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.40);animation:fly1 18.2s ease-in-out infinite 5.4s, blink 4.1s ease-in-out infinite 2.6s"></span>
+      <span style="position:absolute;left:32.4%;top:91.3%;width:6.6px;height:6.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.42);animation:fly2 15.0s ease-in-out infinite 3.7s, blink 4.7s ease-in-out infinite 1.5s"></span>
+      <span style="position:absolute;left:35.1%;top:99.4%;width:3.2px;height:3.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.53);animation:fly3 13.7s ease-in-out infinite 4.6s, blink 2.9s ease-in-out infinite 3.7s"></span>
+      <span style="position:absolute;left:73.2%;top:40.3%;width:3.4px;height:3.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 9px 4px rgba(242,223,58,0.39);animation:fly1 15.5s ease-in-out infinite 2.7s, blink 3.3s ease-in-out infinite 1.9s"></span>
+      <span style="position:absolute;left:26.4%;top:83.8%;width:7.6px;height:7.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.53);animation:fly2 12.7s ease-in-out infinite 1.0s, blink 3.6s ease-in-out infinite 0.3s"></span>
+      <span style="position:absolute;left:58.8%;top:67.3%;width:4.7px;height:4.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 4px rgba(242,223,58,0.44);animation:fly3 15.0s ease-in-out infinite 0.2s, blink 4.5s ease-in-out infinite 2.2s"></span>
+      <span style="position:absolute;left:0.7%;top:73.3%;width:5.0px;height:5.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,0.39);animation:fly1 11.4s ease-in-out infinite 2.3s, blink 4.6s ease-in-out infinite 1.3s"></span>
+      <span style="position:absolute;left:33.6%;top:37.1%;width:6.7px;height:6.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.58);animation:fly2 17.9s ease-in-out infinite 4.0s, blink 4.4s ease-in-out infinite 1.2s"></span>
+      <span style="position:absolute;left:11.4%;top:16.1%;width:6.8px;height:6.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.52);animation:fly3 15.0s ease-in-out infinite 4.1s, blink 2.8s ease-in-out infinite 0.9s"></span>
+      <span style="position:absolute;left:30.8%;top:77.7%;width:6.1px;height:6.1px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.58);animation:fly1 17.3s ease-in-out infinite 1.5s, blink 4.6s ease-in-out infinite 1.3s"></span>
+      <span style="position:absolute;left:80.9%;top:67.8%;width:7.7px;height:7.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,0.39);animation:fly2 13.3s ease-in-out infinite 3.7s, blink 4.4s ease-in-out infinite 0.2s"></span>
+      <span style="position:absolute;left:3.5%;top:40.9%;width:6.7px;height:6.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.55);animation:fly3 16.0s ease-in-out infinite 1.9s, blink 6.1s ease-in-out infinite 3.1s"></span>
+      <span style="position:absolute;left:25.7%;top:38.2%;width:6.0px;height:6.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,0.42);animation:fly1 15.7s ease-in-out infinite 0.0s, blink 5.5s ease-in-out infinite 1.7s"></span>
+      <span style="position:absolute;left:55.3%;top:29.7%;width:3.6px;height:3.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.39);animation:fly2 10.4s ease-in-out infinite 1.9s, blink 4.3s ease-in-out infinite 1.5s"></span>
+      <span style="position:absolute;left:10.5%;top:48.6%;width:3.6px;height:3.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 4px rgba(242,223,58,0.52);animation:fly3 12.9s ease-in-out infinite 2.4s, blink 4.2s ease-in-out infinite 1.6s"></span>
+      <span style="position:absolute;left:41.2%;top:24.7%;width:6.6px;height:6.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 5px rgba(242,223,58,0.45);animation:fly1 18.6s ease-in-out infinite 4.6s, blink 3.5s ease-in-out infinite 2.2s"></span>
+      <span style="position:absolute;left:84.8%;top:63.6%;width:7.0px;height:7.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,0.47);animation:fly2 10.3s ease-in-out infinite 1.1s, blink 3.0s ease-in-out infinite 0.4s"></span>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;gap:26px;align-items:flex-start">
+            <h1 style="margin:0;font-size:80px;line-height:.98;font-weight:900;letter-spacing:-.04em;text-wrap:pretty">Let’s light<br>up the dark</h1>
+      <p style="margin:0;max-width:560px;font-size:19px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.68);text-wrap:pretty">A <strong style="font-weight:700;color:#0a0a0a">growth-focused social media agency</strong> dedicated to scaling restaurant brands in Bangladesh. We bridge the gap between creative storytelling and visible outcomes.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;padding-top:4px">
+        <a href="#packages" style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:999px;background:#0a0a0a;color:#F2DF3A;font-size:16px;font-weight:700" style-hover="background:#F2DF3A;color:#0a0a0a;transform:translateY(-3px);box-shadow:0 14px 30px rgba(242,223,58,.5)">See packages</a>
+        <a href="#services" style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:999px;border:1px solid rgba(10,10,10,.2);color:#0a0a0a;font-size:16px;font-weight:600" style-hover="border-color:#0a0a0a;background:#F2DF3A;transform:translateY(-3px)">What we do</a>
+      </div>
+    </div>
+    <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:16px">
+      <div style="grid-row:span 2;border-radius:20px;background:#ffffff;border:1px solid rgba(10,10,10,.1);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:14px">
+        <img src="uploads/food reels phone.png" alt="Food reel on a phone" style="height:100%;width:auto;object-fit:contain;display:block;mix-blend-mode:multiply">
+      </div>
+      <div style="border-radius:20px;overflow:hidden;background:#0a0a0a;display:flex;align-items:center;justify-content:center;padding:26px">
+        <img src="assets/logo-dark.png" alt="Firefly" style="width:100%;height:auto;display:block">
+      </div>
+      <div style="border-radius:20px;background:#F2DF3A;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:22px">
+        <span style="font-size:38px;font-weight:900;letter-spacing:-.03em;line-height:1">60M+</span>
+        <span style="font-size:13px;font-weight:600;line-height:1.4;color:rgba(10,10,10,.75)">social media users in Bangladesh</span>
+      </div>
+      <div style="grid-column:span 2;border-radius:20px;background:#ffffff;border:1px solid rgba(10,10,10,.1);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px">
+        <img src="uploads/heart text objects.png" alt="Social engagement" style="height:100%;width:auto;object-fit:contain;display:block;mix-blend-mode:multiply">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="border-top:1px solid rgba(10,10,10,.1);border-bottom:1px solid rgba(10,10,10,.1);background:#fff;padding:88px 48px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:52px">
+      <div data-reveal="" style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end">
+        <h2 style="margin:0;font-size:50px;line-height:1.06;font-weight:900;letter-spacing:-.035em;text-wrap:pretty">Social media is now the primary engine for discovery and revenue</h2>
+        <p style="margin:0;font-size:18px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.68);text-wrap:pretty">Visibility is the new currency in Dhaka’s growing competitive food scene — and it is won post by post.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ stats }}" as="st" hint-placeholder-count="3">
+          <div data-reveal="" style="display:flex;flex-direction:column;gap:14px;padding:34px 30px 32px;border-radius:20px;background:#0a0a0a;color:#fff;transition:transform .45s ease,box-shadow .45s ease" style-hover="transform:translateY(-6px);box-shadow:0 20px 40px rgba(10,10,10,.22)">
+            <span style="font-size:46px;font-weight:900;letter-spacing:-.035em;color:#F2DF3A;line-height:1;text-wrap:balance">{{ st.big }}</span>
+            <span style="width:36px;height:3px;border-radius:2px;background:rgba(242,223,58,.5)"></span>
+            <span style="font-size:16px;line-height:1.5;font-weight:400;color:rgba(255,255,255,.78);text-wrap:pretty">{{ st.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1400px;margin:0 auto;padding:88px 48px 24px">
+    <h4 data-reveal="" style="margin:0 0 36px;text-align:center;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(10,10,10,.5)">Our focus</h4>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1000px;margin:0 auto;align-items:end">
+      <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <div style="display:flex;align-items:flex-end;justify-content:center;height:180px"><img src="assets/focus-creativity.png" alt="Creativity" style="max-height:100%;width:auto;display:block;mix-blend-mode:multiply"></div>
+        <span style="font-size:26px;font-weight:900;letter-spacing:-.02em">Creativity</span>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <div style="display:flex;align-items:flex-end;justify-content:center;height:180px"><img src="assets/focus-research.png" alt="Research" style="max-height:100%;width:auto;display:block;mix-blend-mode:multiply"></div>
+        <span style="font-size:26px;font-weight:900;letter-spacing:-.02em">Research</span>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <div style="display:flex;align-items:flex-end;justify-content:center;height:180px"><img src="assets/focus-outcome.png" alt="Outcome" style="max-height:100%;width:auto;display:block;mix-blend-mode:multiply"></div>
+        <span style="font-size:26px;font-weight:900;letter-spacing:-.02em">Outcome</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="max-width:1400px;margin:0 auto;padding:24px 48px 100px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:12px;max-width:720px;margin-bottom:40px">
+      <h2 style="margin:0;font-size:50px;line-height:1.06;font-weight:900;letter-spacing:-.035em">Our services</h2>
+      <p style="margin:0;font-size:18px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.68)">Firefly provides you with three custom tailored services.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+        <article data-reveal="" style="display:flex;flex-direction:column;gap:16px;padding:34px 30px 38px;border-radius:22px;background:#fff;border:1px solid rgba(10,10,10,.1);transition:transform .45s ease,border-color .45s ease,box-shadow .45s ease" style-hover="transform:translateY(-8px);border-color:#E3CC00;box-shadow:0 22px 44px rgba(10,10,10,.09)">
+          <div style="display:flex;align-items:center;justify-content:center;height:260px;border-radius:16px;background:#FBFAF6;overflow:hidden;padding:14px">
+            <img src="{{ s.img }}" alt="{{ s.title }}" style="height:100%;width:auto;object-fit:contain;display:block;mix-blend-mode:multiply">
+          </div>
+          <span style="width:42px;height:42px;border-radius:12px;background:rgba(242,223,58,.45);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800">{{ s.n }}</span>
+          <h5 style="margin:0;font-size:26px;font-weight:800;letter-spacing:-.02em">{{ s.title }}</h5>
+          <p style="margin:0;font-size:15px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.68);text-wrap:pretty">{{ s.body }}</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:6px;padding-top:18px;border-top:1px solid rgba(10,10,10,.1)">
+            <sc-for list="{{ s.proof }}" as="p" hint-placeholder-count="2">
+              <div style="display:flex;align-items:baseline;gap:12px">
+                <span style="font-size:26px;font-weight:900;letter-spacing:-.02em;color:#0a0a0a;background:linear-gradient(transparent 62%,rgba(242,223,58,.85) 62%);padding:0 3px;min-width:82px">{{ p.big }}</span>
+                <span style="font-size:14px;line-height:1.45;color:rgba(10,10,10,.7)">{{ p.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="process" style="background:#0a0a0a;color:#fff;padding:96px 48px">
+    <div style="max-width:1400px;margin:0 auto">
+      <h2 data-reveal="" style="margin:0 0 44px;font-size:50px;line-height:1.06;font-weight:900;letter-spacing:-.035em">How <span style="color:#F2DF3A">Firefly</span> works</h2>
+      <img data-reveal="" src="uploads/how firefly works.png" alt="Firefly process" style="display:block;width:100%;height:auto;margin:0 0 28px;border-radius:20px;background:#fff">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <div data-reveal="" style="display:flex;flex-direction:column;gap:14px;padding:28px 22px 32px;border-radius:20px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);transition:transform .45s ease,border-color .45s ease,background-color .45s ease" style-hover="transform:translateY(-6px);border-color:#F2DF3A;background:rgba(242,223,58,.08)">
+            <span style="font-size:13px;font-weight:800;letter-spacing:.12em;color:#F2DF3A">{{ st.n }}</span>
+            <h6 style="margin:0;font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.015em">{{ st.title }}</h6>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" style="max-width:1400px;margin:0 auto;padding:100px 48px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:12px;max-width:720px;margin-bottom:40px">
+      <h2 style="margin:0;font-size:50px;line-height:1.06;font-weight:900;letter-spacing:-.035em">Our offerings</h2>
+      <p style="margin:0;font-size:18px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.68)">Firefly lets you pick three different packages according to your needs.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
+      <article data-reveal="" style="display:flex;flex-direction:column;gap:8px;padding:38px 32px 34px;border-radius:24px;background:#ffffff;border:1px solid rgba(10,10,10,.12);color:#0a0a0a;transition:transform .45s ease,box-shadow .45s ease" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(10,10,10,.14)">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Starter</span>
+        <h5 style="margin: 0; font-size: 45px; font-weight: 900; letter-spacing: -.025em">Lights &amp; Camera</h5>
+        
+        <div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid rgba(10,10,10,.15)">
+          <span style="font-size:16px;font-weight:500;opacity:.85">3 Reels</span>
+          <span style="font-size:16px;font-weight:500;opacity:.85">2 Statics</span>
+        </div>
+      </article>
+      <article data-reveal="" style="display:flex;flex-direction:column;gap:8px;padding:38px 32px 34px;border-radius:24px;background:#F2DF3A;border:1px solid rgba(10,10,10,.12);color:#0a0a0a;transition:transform .45s ease,box-shadow .45s ease" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(10,10,10,.2)">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.65">Most popular</span>
+        <h5 style="margin: 0; font-size: 45px; font-weight: 900; letter-spacing: -.025em">The Feature Film</h5>
+        
+        <div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid rgba(10,10,10,.2)">
+          <span style="font-size:16px;font-weight:500;opacity:.85">5 Reels</span>
+          <span style="font-size:16px;font-weight:500;opacity:.85">10 Statics</span>
+          <span style="font-size:16px;font-weight:500;opacity:.85">Media buying</span>
+        </div>
+      </article>
+      <article data-reveal="" style="display:flex;flex-direction:column;gap:8px;padding:38px 32px 34px;border-radius:24px;background:#ffffff;border:1px solid rgba(10,10,10,.12);color:#0a0a0a;transition:transform .45s ease,box-shadow .45s ease" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(10,10,10,.14)">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Growth</span>
+        <h5 style="margin: 0; font-size: 45px; font-weight: 900; letter-spacing: -.025em">The Short Film</h5><div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid rgba(10,10,10,.15)">
+          <span style="font-size:16px;font-weight:500;opacity:.85">3 Reels</span>
+          <span style="font-size:16px;font-weight:500;opacity:.85">5 Statics</span>
+          <span style="font-size:16px;font-weight:500;opacity:.85">Media buying</span>
+        </div>
+        
+        
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:0 48px 100px;max-width:1400px;margin:0 auto">
+    <div data-reveal="" onMouseEnter="{{ onContactEnter }}" onMouseLeave="{{ onContactLeave }}" style="position:relative;overflow:hidden;border-radius:28px;background:#0a0a0a;color:#fff;padding:0;display:grid;grid-template-columns:1.25fr .75fr;min-height:340px;transition:box-shadow .5s ease" style-hover="box-shadow:0 26px 60px rgba(10,10,10,.28)">
+      <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .7s ease" data-contact-glow="">
+        <span style="position:absolute;left:80.6%;top:61.6%;width:3.8px;height:3.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,.6);animation:fly1 9.4s ease-in-out infinite 1.8s, blink 5.4s ease-in-out infinite 2.2s"></span>
+        <span style="position:absolute;left:33.4%;top:31.2%;width:6.7px;height:6.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,.6);animation:fly2 13.0s ease-in-out infinite 0.8s, blink 2.9s ease-in-out infinite 0.3s"></span>
+        <span style="position:absolute;left:17.7%;top:89.3%;width:5.0px;height:5.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 6px rgba(242,223,58,.6);animation:fly3 10.4s ease-in-out infinite 2.0s, blink 4.9s ease-in-out infinite 1.2s"></span>
+        <span style="position:absolute;left:40.1%;top:70.9%;width:6.5px;height:6.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,.6);animation:fly1 9.5s ease-in-out infinite 3.4s, blink 4.4s ease-in-out infinite 2.7s"></span>
+        <span style="position:absolute;left:97.2%;top:21.8%;width:6.7px;height:6.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,.6);animation:fly2 15.3s ease-in-out infinite 2.4s, blink 4.5s ease-in-out infinite 2.1s"></span>
+        <span style="position:absolute;left:88.6%;top:40.1%;width:4.7px;height:4.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,.6);animation:fly3 14.0s ease-in-out infinite 3.6s, blink 3.0s ease-in-out infinite 2.1s"></span>
+        <span style="position:absolute;left:97.5%;top:83.7%;width:7.7px;height:7.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 15px 7px rgba(242,223,58,.6);animation:fly1 14.0s ease-in-out infinite 2.7s, blink 3.1s ease-in-out infinite 2.8s"></span>
+        <span style="position:absolute;left:54.8%;top:73.5%;width:3.3px;height:3.3px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 5px rgba(242,223,58,.6);animation:fly2 12.4s ease-in-out infinite 2.9s, blink 3.4s ease-in-out infinite 2.5s"></span>
+        <span style="position:absolute;left:64.8%;top:7.2%;width:4.7px;height:4.7px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,.6);animation:fly3 15.3s ease-in-out infinite 3.7s, blink 3.7s ease-in-out infinite 0.1s"></span>
+        <span style="position:absolute;left:22.5%;top:56.7%;width:5.8px;height:5.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,.6);animation:fly1 13.3s ease-in-out infinite 3.2s, blink 4.8s ease-in-out infinite 0.0s"></span>
+        <span style="position:absolute;left:49.1%;top:63.3%;width:3.0px;height:3.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 10px 5px rgba(242,223,58,.6);animation:fly2 16.4s ease-in-out infinite 0.1s, blink 4.5s ease-in-out infinite 2.8s"></span>
+        <span style="position:absolute;left:6.9%;top:32.8%;width:6.5px;height:6.5px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 6px rgba(242,223,58,.6);animation:fly3 15.8s ease-in-out infinite 0.8s, blink 3.3s ease-in-out infinite 1.8s"></span>
+        <span style="position:absolute;left:64.8%;top:40.9%;width:7.4px;height:7.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 7px rgba(242,223,58,.6);animation:fly1 9.3s ease-in-out infinite 2.2s, blink 5.0s ease-in-out infinite 1.0s"></span>
+        <span style="position:absolute;left:71.2%;top:45.9%;width:3.9px;height:3.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,.6);animation:fly2 16.6s ease-in-out infinite 1.2s, blink 3.4s ease-in-out infinite 2.1s"></span>
+        <span style="position:absolute;left:27.5%;top:87.0%;width:8.0px;height:8.0px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 15px 7px rgba(242,223,58,.6);animation:fly3 16.8s ease-in-out infinite 1.5s, blink 4.8s ease-in-out infinite 0.6s"></span>
+        <span style="position:absolute;left:74.1%;top:50.2%;width:4.8px;height:4.8px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 5px rgba(242,223,58,.6);animation:fly1 11.9s ease-in-out infinite 2.1s, blink 3.6s ease-in-out infinite 1.0s"></span>
+        <span style="position:absolute;left:68.6%;top:86.8%;width:5.4px;height:5.4px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 12px 6px rgba(242,223,58,.6);animation:fly2 9.8s ease-in-out infinite 2.8s, blink 5.5s ease-in-out infinite 2.9s"></span>
+        <span style="position:absolute;left:48.9%;top:13.0%;width:5.9px;height:5.9px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 13px 6px rgba(242,223,58,.6);animation:fly3 9.4s ease-in-out infinite 3.9s, blink 3.5s ease-in-out infinite 2.2s"></span>
+        <span style="position:absolute;left:77.5%;top:78.2%;width:7.2px;height:7.2px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 14px 7px rgba(242,223,58,.6);animation:fly1 10.2s ease-in-out infinite 0.3s, blink 4.5s ease-in-out infinite 1.0s"></span>
+        <span style="position:absolute;left:28.8%;top:74.5%;width:3.6px;height:3.6px;border-radius:50%;background:#F2DF3A;box-shadow:0 0 11px 5px rgba(242,223,58,.6);animation:fly2 9.0s ease-in-out infinite 2.8s, blink 3.5s ease-in-out infinite 1.6s"></span>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:70px 60px">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#F2DF3A">Get in touch</span>
+        <h2 style="margin:0;font-size:60px;line-height:1;font-weight:900;letter-spacing:-.04em;text-wrap:pretty">Let’s <span style="color:#F2DF3A">light</span> up the dark</h2>
+        <p style="margin:0;max-width:460px;font-size:17px;line-height:1.6;font-weight:300;color:rgba(255,255,255,.7);text-wrap:pretty">Tell us about your restaurant and we’ll come back with a content plan built for it.</p>
+        <a href="mailto:digital.firefly.co@gmail.com" style="align-self:flex-start;display:inline-flex;align-items:center;height:56px;padding:0 32px;border-radius:999px;background:#F2DF3A;color:#0a0a0a;font-size:16px;font-weight:700;margin-top:6px" style-hover="background:#fff;box-shadow:0 14px 30px rgba(242,223,58,.35)">Start a project</a>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;justify-content:center;gap:0;border-left:1px solid rgba(255,255,255,.14)">
+        <a href="tel:+8801746589246" style="display:flex;flex-direction:column;gap:6px;padding:34px 44px;border-bottom:1px solid rgba(255,255,255,.14);color:#fff" style-hover="background:rgba(242,223,58,.1);color:#F2DF3A">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Phone</span>
+          <span style="font-size:22px;font-weight:800;letter-spacing:-.01em">+880 1746 589246</span>
+        </a>
+        <a href="mailto:digital.firefly.co@gmail.com" style="display:flex;flex-direction:column;gap:6px;padding:34px 44px;border-bottom:1px solid rgba(255,255,255,.14);color:#fff" style-hover="background:rgba(242,223,58,.1);color:#F2DF3A">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Email</span>
+          <span style="font-size:18px;font-weight:600">digital.firefly.co@gmail.com</span>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:34px 44px">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Based in</span>
+          <span style="font-size:18px;font-weight:600">Dhaka, Bangladesh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(10,10,10,.1);background:#fff;padding:64px 48px 40px">
+    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:56px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <img src="assets/logo-light.png" alt="Firefly" style="height:44px;width:auto;display:block">
+        <p style="margin:0;max-width:340px;font-size:15px;line-height:1.6;font-weight:300;color:rgba(10,10,10,.6)">A growth-focused social media agency for restaurant brands in Bangladesh.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h6 style="margin:0;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(10,10,10,.5)">Email</h6>
+        <a href="mailto:digital.firefly.co@gmail.com" style="font-size:16px;font-weight:500">digital.firefly.co@gmail.com</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h6 style="margin:0;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(10,10,10,.5)">Phone</h6>
+        <a href="tel:+8801746589246" style="font-size:20px;font-weight:800;letter-spacing:-.01em">+880 1746 589246</a>
+      </div>
+    </div>
+    <div style="max-width:1400px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(10,10,10,.1);font-size:13px;font-weight:300;color:rgba(10,10,10,.45)">© Firefly. All rights reserved</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1024}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1) ' + ((i % 5) * 70) + 'ms, transform .7s cubic-bezier(.2,.7,.3,1) ' + ((i % 5) * 70) + 'ms';
+    });
+    const show = el => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+    this._fallback = setTimeout(() => els.forEach(show), 2500);
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); }
+  renderVals() {
+    const focus = ["CREATIVITY", "RESEARCH", "OUTCOME"];
+    return {
+      onContactEnter: e => { const g = e.currentTarget.querySelector('[data-contact-glow]'); if (g) g.style.opacity = '1'; },
+      onContactLeave: e => { const g = e.currentTarget.querySelector('[data-contact-glow]'); if (g) g.style.opacity = '0'; },
+      focusRow: [...focus, ...focus, ...focus, ...focus],
+      stats: [
+        { big: "60+ million", label: "social media users in Bangladesh" },
+        { big: "62%", label: "check a restaurant’s social media for pictures of food before visiting" },
+        { big: "Visibility", label: "is the new currency in Dhaka’s growing competitive food scene" }
+      ],
+      services: [
+        { n: "01", title: "Reels", img: "uploads/food reels phone.png", body: "In Bangladesh, food is visual — and Reels are king. They convey emotion to customers.", proof: [ { big: "2–3×", label: "faster audience growth than those without reels" }, { big: "73%", label: "prefer learning from a video rather than reading text" } ] },
+        { n: "02", title: "Static & carousels", img: "uploads/carousel phone.png", body: "While video grabs attention, static content answers the FAQs that customers usually have.", proof: [ { big: "20%", label: "increase in interaction just by adding carousel slides" }, { big: "65%", label: "of information is retained when paired with a relevant static image" } ] },
+        { n: "03", title: "Media buying", img: "uploads/media buying phone.png", body: "Paid ads let you target your customers rather than waiting for them to find you.", proof: [ { big: "70%", label: "of restaurant customers are more likely to visit after personalised ads" }, { big: "72%", label: "have used Facebook ads to make restaurant decisions" } ] }
+      ],
+      steps: [
+        { n: "01", title: "Restaurant need analysis" },
+        { n: "02", title: "Content calendar submission" },
+        { n: "03", title: "Client review & approval" },
+        { n: "04", title: "Content shooting & editing" },
+        { n: "05", title: "Post scheduling & media buying" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
